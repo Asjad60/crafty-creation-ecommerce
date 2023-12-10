@@ -1,0 +1,157 @@
+.nav {
+  height: 44px;
+  background: #161d29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #2c333f;
+  z-index: 1000;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  padding-left: 0.2rem;
+}
+
+.nav .nav-list li a,
+.nav-list li p {
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navLinks {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navLinks > a {
+  background: #161d29;
+  overflow-y: hidden;
+}
+
+.logo {
+  mix-blend-mode: lighten;
+  margin-top: 0.5rem;
+  width: 12rem;
+  height: 3rem;
+  /* aspect-ratio: 16/4; */
+  object-fit: cover;
+}
+
+button {
+  align-self: center;
+}
+
+.catalog-dropDown {
+  display: flex;
+}
+
+.dropDown-links {
+  position: absolute;
+  width: 15rem;
+  top: 2.8rem;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  transform: translateX(-42%);
+  padding: 20px;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.catalog-links {
+  padding: 10px;
+  color: black;
+}
+
+.catalog-links:hover {
+  background: lightgrey;
+}
+
+.triangle {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  transform: rotate(45deg);
+  background-color: white;
+  top: -10px;
+  left: 69%;
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.catalog-dropDown:hover .dropDown-links {
+  visibility: visible;
+}
+
+.active {
+  color: yellow;
+}
+
+.white {
+  color: white;
+}
+
+.login-sign-btn {
+  padding: 0.5rem 0.8rem;
+  margin-left: 0.5rem;
+  border-radius: 7px;
+  border: 1px solid #2c333f;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.656);
+  cursor: pointer;
+}
+
+.login-signup {
+  display: flex;
+  gap: 10px;
+}
+
+.cart-icon-link {
+  align-self: center;
+  margin-right: 5px;
+  position: relative;
+}
+
+.totalItems-span {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 3px 8px;
+  background-color: rgb(213, 168, 23);
+  color: #000;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    left: -5%;
+    top: 4rem;
+    padding: 1rem;
+    width: 100vw;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+  }
+
+  .login-sign-btn {
+    padding: 0.3rem 0.5rem;
+    margin-left: 0.5rem;
+  }
+  .dropDown-links {
+    top: 6.4rem;
+  }
+}

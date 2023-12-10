@@ -1,0 +1,74 @@
+.profile-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-img {
+  display: flex;
+  gap: 3px;
+}
+
+.profile-img img {
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: none;
+  aspect-ratio: 1;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 120%;
+  left: -60%;
+  color: white;
+  background: #161d29;
+  display: flex;
+  flex-direction: column;
+  width: 135px;
+  padding: 5px;
+  border-radius: 5px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border: 1px solid #2c333f;
+}
+
+@media only screen and (max-width: 1450px) {
+  .profile-dropdown {
+    left: -130%;
+  }
+}
+
+.profile-dropdown a {
+  color: rgba(245, 245, 245, 0.665);
+  text-decoration: none;
+  font-size: 11px;
+  border-bottom: 1px solid #2c333f;
+  border-bottom-width: 1px;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-link {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size: 15px;
+  color: rgba(245, 245, 245, 0.665);
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-link:hover,
+.logout-btn:hover {
+  background-color: #2c333f;
+  color: #dbddea;
+}
