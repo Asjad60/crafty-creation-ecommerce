@@ -6,6 +6,7 @@
   align-items: center;
   border-bottom: 1px solid #2c333f;
   z-index: 1000;
+  position: relative;
 }
 
 .nav-list {
@@ -25,7 +26,6 @@
   width: 95%;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .navLinks > a {
@@ -37,7 +37,7 @@
   mix-blend-mode: lighten;
   margin-top: 0.5rem;
   width: 12rem;
-  height: 3rem;
+  height: 3.2rem;
   /* aspect-ratio: 16/4; */
   object-fit: cover;
 }
@@ -133,18 +133,17 @@ button {
   font-weight: 600;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .navbar {
     position: absolute;
     align-items: center;
     justify-content: center;
-    left: -5%;
-    top: 4rem;
+    left: -1px;
+    top: 3.5rem;
     padding: 1rem;
-    width: 100vw;
-    transition: all 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
+    width: 100%;
+    background-color: #000814;
+    backdrop-filter: blur(10px);
   }
 
   .login-sign-btn {
@@ -153,5 +152,12 @@ button {
   }
   .dropDown-links {
     top: 6.4rem;
+  }
+}
+
+@media only screen and (width < 768px) {
+  .nav-list {
+    flex-direction: column;
+    justify-content: center;
   }
 }

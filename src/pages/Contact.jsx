@@ -46,7 +46,7 @@ const Contact = () => {
         })}
       </div>
 
-      <div className="bg-transparent p-14 border border-[#2c333f] rounded-md  w-full">
+      <div className="bg-transparent p-6 lg:p-14 border border-[#2c333f] rounded-md  w-full">
         <div className="flex flex-col gap-3 mb-12">
           <p className="text-4xl font-medium">
             Got a Idea? We've got the skills. Let's team up

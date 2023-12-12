@@ -59,20 +59,20 @@ const Nav = () => {
 
   return (
     <>
-      <div className="nav z-[1000] py-7">
-        <div className="navLinks relative z-[1000] flex max-w-maxContent items-center justify-between ">
-          <Link to="/">
+      <div className="nav z-[1000] relative py-7">
+        <div className="navLinks z-[1000]  flex max-w-maxContent items-center justify-between ">
+          <Link to="/" className="overflow-y-hidden h-12">
             <img src={logo} alt="logo" className="logo" />
           </Link>
 
           <nav
-            className={`navbar z-10 md:block max-[768px]:backdrop-blur-sm ${
+            className={`navbar z-10 md:block ${
               openNavbar ? "flex " : "hidden"
             }`}
           >
-            <ul className="nav-list flex flex-col md:flex-row">
+            <ul className="nav-list">
               {NavLinks.map((link, index) => (
-                <li key={index} className="text-lg">
+                <li key={index} className="text-lg text-start">
                   {link.title === "Catalog" ? (
                     <>
                       <div
@@ -120,13 +120,24 @@ const Nav = () => {
                   )}
                 </li>
               ))}
+              {token === null && (
+                <>
+                  <Link to="/login" className="md:hidden">
+                    <button className="login-sign-btn">Log in</button>
+                  </Link>
+
+                  <Link to="/signup" className="md:hidden">
+                    <button className="login-sign-btn">Sign Up</button>
+                  </Link>
+                </>
+              )}
             </ul>
           </nav>
 
           {/* Login / Sign-UP / Dashboard */}
 
           <div
-            className={` max-[768px]:absolute right-10  md:flex  ${
+            className={`md:flex max-[767px]:absolute right-14 ${
               openNavbar ? "flex" : "hidden"
             }`}
           >
@@ -140,13 +151,13 @@ const Nav = () => {
             )}
 
             {token === null && (
-              <Link to="/login">
+              <Link to="/login" className="hidden md:block">
                 <button className="login-sign-btn">Log in</button>
               </Link>
             )}
 
             {token === null && (
-              <Link to="/signup">
+              <Link to="/signup" className="hidden md:block">
                 <button className="login-sign-btn">Sign Up</button>
               </Link>
             )}

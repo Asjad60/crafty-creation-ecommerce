@@ -27,7 +27,7 @@ const ProductPublish = () => {
 
   const goToProducts = () => {
     dispatch(resetProductState());
-    navigate("/dashboard/my-products");
+    navigate("/dashboard/my-listings");
   };
 
   const handleProductPublish = async () => {

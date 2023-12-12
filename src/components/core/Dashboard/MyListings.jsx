@@ -50,6 +50,8 @@ const MyProducts = () => {
     //eslint-disable-next-line
     [products, loading]
   );
+
+  console.log("products ==> ", products);
   return (
     <div>
       <div className="flex justify-between mb-10">
@@ -82,17 +84,20 @@ const MyProducts = () => {
                 <img
                   src={item?.thumbnail}
                   alt="productTHmbnail"
-                  className="w-[100%] max-w-[180px] max-h-[180px] h-full rounded-md object-cover"
+                  className="w-[100%] min-w-[120px] max-w-[180px] min-h-[120px] max-h-[180px] h-full rounded-md object-cover"
                 />
-                <div className="flex flex-col gap-4 justify-center">
+                <div className="flex flex-col gap-4 justify-center overflow-scroll">
                   <h2 className="text-lg font-medium">{item?.productName}</h2>
-                  <p className="text-sm opacity-50">
-                    {item?.productDescription.split(" ").length > 20
+                  <p className="text-sm text-gray-500 max-[450px]:whitespace-nowrap">
+                    {
+                      /* {item?.productDescription.split(" ").length > 20
                       ? item.productDescription
                           .split(" ")
                           .slice(0, 20)
                           .join(" ") + "..."
-                      : item?.productDescription}
+                      : item?.productDescription} */
+                      item?.category?.name
+                    }
                   </p>
 
                   <p className="text-sm">
@@ -112,12 +117,12 @@ const MyProducts = () => {
                 </div>
               </div>
 
-              <div className="sm:hidden flex flex-col gap-y-10 opacity-70 ">
+              <div className="sm:hidden flex flex-col gap-y-10 opacity-70 h-24">
                 <p>PRICE</p>
                 <p>ACTIONS</p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start gap-10 mr-4">
+              <div className="flex flex-col sm:flex-row items-start gap-10 mr-4 h-24">
                 <p className="flex items-center opacity-70">
                   {" "}
                   <BsCurrencyRupee /> {item?.price}

@@ -21,7 +21,7 @@ import Cart from "./components/core/Dashboard/Cart/Cart";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import AddProduct from "./components/core/Dashboard/AddProduct";
 import ErrorPage from "./pages/ErrorPage";
-import MyProducts from "./components/core/Dashboard/MyProducts";
+import MyListings from "./components/core/Dashboard/MyListings";
 import EditProduct from "./components/core/Dashboard/EditProduct/EditProduct";
 import ProductDetails from "./pages/ProductDetails";
 import About from "./pages/About";
@@ -112,7 +112,7 @@ function App() {
           {user?.accountType === ACCOUNT_TYPE.SUPPLIER && (
             <>
               <Route path="/dashboard/add-product" element={<AddProduct />} />
-              <Route path="/dashboard/my-listings" element={<MyProducts />} />
+              <Route path="/dashboard/my-listings" element={<MyListings />} />
               <Route
                 path="/dashboard/edit-product/:productId"
                 element={<EditProduct />}

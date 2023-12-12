@@ -11,7 +11,7 @@ function MyProfile() {
   return (
     <div className="text-white ">
       <h1 className="text-3xl font-medium mb-10">MY Profile</h1>
-      <div className="flex items-center justify-between py-8 px-8 bg-[#161d29] rounded-lg">
+      <div className="flex items-center justify-between p-8 bg-[#161d29] rounded-lg">
         <div className="flex max-[460px]:flex-wrap gap-x-4">
           <img
             src={user?.image}
@@ -64,7 +64,7 @@ function MyProfile() {
           </IconButton>
         </div>
 
-        <div className="flex max-w-[550px] justify-between">
+        <div className="flex flex-col sm:flex-row max-w-[550px] justify-between">
           <div className="flex flex-col gap-y-1 px-2 w-full">
             <p className="text-sm text-slate-400">First Name</p>
             <p className="mb-3 font-medium"> {user?.name.split(" ")[0]}</p>

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import { setToken } from "../../slices/authSlice";
-import { setUser } from "../../slices/profileSlice";
+// import { setToken } from "../../slices/authSlice";
+// import { setUser } from "../../slices/profileSlice";
 import "./Login.css";
-import { loginUser } from "../../services/apis";
 import { login } from "../../services/operations/authApi";
 
 export default function Login() {

@@ -175,6 +175,7 @@ exports.getAllProducts = async (req, res) => {
   try {
     const allProducts = await ProductModel.find({ status: "Published" })
       .populate("supplier")
+      .select("-password")
       .populate("ratingAndReviews")
       .exec();
 
@@ -201,6 +202,7 @@ exports.getProductDetails = async (req, res) => {
     })
       .populate({
         path: "supplier",
+        select: "-password",
         populate: {
           path: "additionalDetails",
         },
@@ -313,9 +315,11 @@ exports.editProduct = async (req, res) => {
 exports.getSupplierProducts = async (req, res) => {
   try {
     const supplierId = req.user.id;
-    const products = await ProductModel.find({ supplier: supplierId }).sort({
-      createdAt: -1,
-    });
+    const products = await ProductModel.find({ supplier: supplierId })
+      .sort({
+        createdAt: -1,
+      })
+      .populate("category");
 
     if (!products) {
       return res.status(404).json({

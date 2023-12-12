@@ -1,5 +1,5 @@
 {
-  "name": "e-commerce",
+  "name": "crafty-creation",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "cd backend && nodemon",
+    "server": "cd backend && npm run dev",
     "dev": "concurrently -n \"client,server\" -c \"bgBlue,bgYellow\" \"npm start\" \"npm run server\""
   },
   "eslintConfig": {
