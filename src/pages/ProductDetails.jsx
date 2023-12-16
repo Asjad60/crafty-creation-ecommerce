@@ -12,6 +12,8 @@ import { logout } from "../services/operations/authApi";
 import RatingStars from "../components/common/RatingStars";
 import GetAvgRating from "../utils/avgRating";
 import ProductSpecification from "../components/core/ProductDetails/ProuctSpecification";
+import Footer from "../components/common/Footer";
+import ProductImageSlider from "../components/core/ProductDetails/ProductImageSlider";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -106,8 +108,9 @@ const ProductDetails = () => {
   return (
     <>
       <div className="min-h-[150vh]">
-        <div className=" max-w-maxContent mx-auto w-full gap-x-10 flex px-6 py-6 border-b border-b-[#2c333f]">
-          <div className="flex flex-col gap-y-4 sticky top-[10px] max-h-[440px]">
+        <div className=" max-w-maxContent mx-auto w-full lg:gap-x-10 flex flex-col lg:flex-row p-1 sm:p-6 border-b border-b-[#2c333f]">
+          {/* ================= Image Section ================ */}
+          <div className="hidden lg:flex flex-col gap-y-4 sticky top-[60px] max-h-[440px]">
             <div className={`flex gap-x-4 `}>
               <div className=" flex flex-col gap-y-2">
                 {imgUrls.map((image, i) => (
@@ -142,8 +145,26 @@ const ProductDetails = () => {
             </div>
           </div>
 
+          {/* ============ For Mobile Screen Image Slider And Buttons */}
+          <div className="flex lg:hidden mb-3">
+            <ProductImageSlider images={imgUrls} />
+          </div>
+          <div className="fixed bottom-0 left-0 bg-[#161d29a9] gap-x-4 p-5 lg:hidden flex w-full justify-around">
+            <button
+              className="rounded-md bg-[#2C333F] text-white p-2 w-full"
+              onClick={handleAddToCart}
+            >
+              ADD TO CART
+            </button>
+            <IconButton
+              text={"BUY NOW"}
+              onclick={handleBuyProduct}
+              customClasses={"w-full flex justify-center"}
+            />
+          </div>
+
           {/* =============== Product Details Section ==================*/}
-          <div className="text-white flex flex-col ml-4 gap-4  max-w-[700px] w-full">
+          <div className="mx-auto text-white flex flex-col gap-4 max-w-[700px] w-full">
             <div className="flex flex-col ">
               <p className="text-2xl">{productDetails?.productName}</p>
               <div className="flex gap-x-2 text-sm">
@@ -191,8 +212,8 @@ const ProductDetails = () => {
             <ProductSpecification product={productDetails} />
           </div>
         </div>
+        <Footer />
       </div>
-
       {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
     </>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { apiConnector } from "../services/apiconnector";
 import { allProductData } from "../services/apis";
 import Products from "../components/Products";
+import Footer from "../components/common/Footer";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -22,11 +23,14 @@ function Home() {
   }, []);
 
   return (
-    <div className="p-5 grid justify-center min-h-[calc(100vh-3.6rem)] w-screen">
-      <div className="max-w-[1260px]">
-        <Products products={products} />
+    <>
+      <div className="p-5 grid justify-center min-h-[calc(100vh-3.6rem)] w-screen">
+        <div className="max-w-[1260px]">
+          <Products products={products} />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

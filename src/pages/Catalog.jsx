@@ -47,9 +47,11 @@ function Catalog() {
   }, [categoryId]);
 
   if (loading || !catalogPageData) {
-    <div className="grid place-items-center min-h-screen min-w-full">
-      <div className="spinner"></div>
-    </div>;
+    return (
+      <div className="grid place-items-center min-h-screen min-w-full">
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
   return (

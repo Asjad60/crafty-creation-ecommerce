@@ -2,7 +2,7 @@ import { paymentEndpoints } from "../apis";
 import { toast } from "react-hot-toast";
 import { apiConnector } from "../apiconnector";
 import { setPaymentLoading } from "../../slices/productSlice";
-import logo from "../../logo/Express.png";
+import logo from "../../assets/logo/craftyLogo.png";
 
 const { CAPTURE_PAYMENT_API, VERIFY_PAYMENT_API } = paymentEndpoints;
 

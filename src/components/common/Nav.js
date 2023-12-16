@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import "./Nav.css";
 import { Link, matchPath, useLocation } from "react-router-dom";
-// import { toast } from "react-hot-toast"
 import { NavLinks } from "../../data/navbar-links";
 import { useSelector } from "react-redux";
-// import { useDispatch } from "react-redux";
-// import { logout } from "../../services/operations/authApi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { ACCOUNT_TYPE } from "../../utils/constants";
 import { AiOutlineShoppingCart, AiOutlineMenu } from "react-icons/ai";
 import ProfileDropdown from "../core/profileDropDown/ProfileDropdown";
 import { useEffect } from "react";
 import { getCategories } from "../../services/operations/productApi";
-import logo from "../../logo/craftyLogo.png";
+import logo from "../../assets/logo/craftyLogo.png";
 
 const Nav = () => {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
   const { totalItems } = useSelector((state) => state.cart);
   const location = useLocation();
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
   const [subLinks, setSubLinks] = useState([]);
 
   useEffect(() => {
@@ -137,7 +132,7 @@ const Nav = () => {
           {/* Login / Sign-UP / Dashboard */}
 
           <div
-            className={`md:flex max-[767px]:absolute right-14 ${
+            className={`md:flex max-[767px]:absolute right-14 max-[325px]:right-8 ${
               openNavbar ? "flex" : "hidden"
             }`}
           >
@@ -162,7 +157,7 @@ const Nav = () => {
               </Link>
             )}
 
-            {token !== null && <ProfileDropdown />}
+            {token !== null && window.innerWidth < 768 && <ProfileDropdown />}
           </div>
 
           <button
